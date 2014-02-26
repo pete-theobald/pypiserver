@@ -37,7 +37,7 @@ def configure(root=None,
               redirect_to_fallback=True,
               fallback_url=None,
               password_file=None,
-              docs_directory=None,
+              docs_root=None,
               overwrite=False):
     global packages
     global docs
@@ -64,7 +64,7 @@ def configure(root=None,
     packages = lambda: itertools.chain(*[listdir(r) for r in roots])
     packages.root = roots[0]
 
-    docs = docs_directory
+    docs = docs_root
 
     config.redirect_to_fallback = redirect_to_fallback
     config.fallback_url = fallback_url
